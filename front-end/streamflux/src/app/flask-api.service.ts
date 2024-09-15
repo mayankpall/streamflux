@@ -1,0 +1,19 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class FlaskApiService {
+
+  private apiUrl = 'http://localhost:5000/retrieve'; // Replace with your Flask API URL
+
+  constructor(private http: HttpClient) { }
+
+  getData(deviceId: number): Observable<any> {
+    const params = { device_id: deviceId };
+    // Send the deviceId as a query parameter in the GET request
+    return this.http.post<any>(this.apiUrl,params);
+  }
+}

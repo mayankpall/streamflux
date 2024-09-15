@@ -1,0 +1,30 @@
+<div>
+    <h2>Device Data</h2>
+    <label for="deviceId">Device ID:</label>
+    <input id="deviceId" [(ngModel)]="deviceId" placeholder="Enter Device ID">
+    <button (click)="getData()">Get Data</button>
+  
+    <div *ngIf="errorMessage" class="error">
+      <p>{{ errorMessage }}</p>
+    </div>
+  
+    <table *ngIf="data.length > 0" border="1">
+      <thead>
+        <tr>
+          <!-- Adjust the column names based on your data structure -->
+          <th>Device ID</th>
+          <th>Water Level</th>
+          <!-- Add more headers if needed -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data">
+          <!-- Adjust the fields to match your data structure -->
+          <td>{{ item.device_id }}</td>
+          <td>{{ item.water_level }}</td>
+          <!-- Add more columns if needed -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
