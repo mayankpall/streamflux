@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class FlaskApiService {
 
-  private apiUrl = 'http://localhost:5000/retrieve'; // Replace with your Flask API URL
+  private apiUrl = 'http://127.0.0.1:5000/retrieve'; // Replace with your Flask API URL
 
   constructor(private http: HttpClient) { }
 
-  getData(deviceId: number): Observable<any> {
+  getData(deviceId: string): Observable<any> {
     const params = { device_id: deviceId };
     // Send the deviceId as a query parameter in the GET request
     return this.http.post<any>(this.apiUrl,params);

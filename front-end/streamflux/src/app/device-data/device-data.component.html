@@ -1,8 +1,10 @@
 <div>
+
+  <p>You clicked on pin with ID: {{ deviceId }}</p>
     <h2>Device Data</h2>
-    <label for="deviceId">Device ID:</label>
+    <!-- <label for="deviceId">Device ID:</label>
     <input id="deviceId" [(ngModel)]="deviceId" placeholder="Enter Device ID">
-    <button (click)="getData()">Get Data</button>
+    <button (click)="getData()">Get Data</button> -->
   
     <div *ngIf="errorMessage" class="error">
       <p>{{ errorMessage }}</p>

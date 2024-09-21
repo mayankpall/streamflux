@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FlaskApiService } from '../flask-api.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-device-data',
@@ -7,15 +8,30 @@ import { FlaskApiService } from '../flask-api.service';
   styleUrls: ['./device-data.component.css']
 })
 export class DeviceDataComponent implements OnInit {
-  deviceId!: number;
+  deviceId!: string;
   data: any[] = [];  // Array to store the response data
   errorMessage: string | null = null;
+  sub: any;
 
-  constructor(private flaskApiService: FlaskApiService) { }
+  constructor(private flaskApiService: FlaskApiService, private route: ActivatedRoute) { 
+   
+  }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.sub = this.route.params.subscribe(params => {
+      this.deviceId = params['id'];
+      });
+      console.log(this.deviceId);
+    
+      this.getData();
+
+   
+   }
+   ngOnAfterInit():void{
+   }
 
   getData(): void {
+    console.log("here");
     this.flaskApiService.getData(this.deviceId).subscribe(
       response => {
         this.data = response;  // Assign response to data array
