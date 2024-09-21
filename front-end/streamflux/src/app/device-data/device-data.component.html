@@ -1,0 +1,58 @@
+<div class="container">
+  <!-- Title Section -->
+  <h1 class="page-title">Device Data Visualization</h1>
+
+  <!-- Toggle Button for Temp Data -->
+  <div class="button-container">
+    <button class="btn-toggle" (click)="toggleTempData()">Toggle Temp Data</button>
+  </div>
+
+  <!-- Display Data Mode (Temp or Real) -->
+  <p class="data-mode">Currently showing: <strong>{{ showTempData ? 'Temporary Data' : 'Real Data' }}</strong></p>
+
+  <!-- Data Card Layout for Chart -->
+  <div class="data-card">
+    <p>You clicked on pin with ID: <strong>{{ deviceId }}</strong></p>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="error">
+      <p>{{ errorMessage }}</p>
+    </div>
+
+    <!-- Chart -->
+    <div *ngIf="chartData.length > 0" class="chart-container">
+      <ngx-charts-line-chart
+        [view]="view"
+        [scheme]="colorScheme"
+        [results]="chartData"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="true"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [xAxisLabel]="'Date'"
+        [yAxisLabel]="'Water Level (ft)'"
+        [autoScale]="true"
+        [curve]="'monotoneX'"
+        [animations]="true"
+        [tooltipDisabled]="false">
+      </ngx-charts-line-chart>
+    </div>
+  </div>
+
+  <!-- Table (Optional) -->
+  <!-- <table *ngIf="data.length > 0" border="1">
+    <thead>
+      <tr> 
+        <th>Device ID</th>
+        <th>Water Level</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td>{{ item.device_id }}</td>
+        <td>{{ item.water_level }}</td>
+      </tr>
+    </tbody>
+  </table> -->
+</div>

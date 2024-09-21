@@ -1,0 +1,7 @@
+@import "~leaflet/dist/leaflet.css";
+
+#map {
+    height: 100vh; /* Set full screen height for the map */
+    width: 100vw;  /* Set full width for the map */
+  }
+  

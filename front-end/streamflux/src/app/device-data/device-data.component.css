@@ -1,0 +1,142 @@
+/* Global Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 90%;
+  padding: 30px;
+  background-color: #f8f9fb;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Page Title Styling */
+.page-title {
+  font-family: 'Poppins', sans-serif;
+  color: #2c3e50;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  letter-spacing: 1.5px;
+}
+
+/* Button Container */
+.button-container {
+  margin: 25px 0;
+}
+
+/* Styling the Toggle Button */
+.btn-toggle {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.btn-toggle:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Data Mode Text Styling */
+.data-mode {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #7f8c8d;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Data Card Styling */
+.data-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.data-card p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+}
+
+/* Chart Container Styling */
+.chart-container {
+  margin: 40px auto;
+  max-width: 100%;
+}
+
+/* Error Message Styling */
+.error {
+  color: #e74c3c;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+/* Table Styling (if you decide to use it later) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background-color: #ffffff;
+  color: #2c3e50;
+}
+
+table th, table td {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  padding: 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+table th {
+  background-color: #34495e;
+  color: #fff;
+}
+
+table td {
+  background-color: #f4f6f7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .page-title {
+    font-size: 2.2rem;
+  }
+
+  .btn-toggle {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .data-mode {
+    font-size: 1.2rem;
+  }
+
+  table th, table td {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
