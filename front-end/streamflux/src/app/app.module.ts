@@ -7,6 +7,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DeviceDataComponent } from './device-data/device-data.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,7 +19,9 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    DeviceDataComponent  // Create this component separately for pin details
+    DeviceDataComponent,
+    HeaderComponent,
+    FooterComponent  // Create this component separately for pin details
   ],
   imports: [
     BrowserModule,

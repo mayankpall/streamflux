@@ -37,7 +37,7 @@ void callApi(int distance) {
     HTTPClient http;
 
 /********************************REPLACE IP HERE:**********************************************/
-    String serverPath = "http://192.168.102.132:5000/store";
+    String serverPath = "http://192.168.43.132:5000/store";
     http.begin(client, serverPath);
      http.addHeader("Content-Type", "application/x-www-form-urlencoded");
     char value[10];
